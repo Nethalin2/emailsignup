@@ -1,4 +1,5 @@
 // const faker = require ("faker");
+require('dotenv').config
 const mysql = require("mysql");
 const { promisify } = require ("util");
 
@@ -30,7 +31,7 @@ const runQuery = async () => {
 const addEmail = async (email) => {
     try {
         //wait for the promise to be handled before trying to log the data
-        const queryStringAdd = `INSERT INTO users(email) VALUES ?('${email}')`;
+        const queryStringAdd = `INSERT INTO users(email) VALUES ('${email}')`;
         let data = await promisifedQuery(queryStringAdd)
         return data;
 
