@@ -19,7 +19,7 @@ const runQuery = async () => {
     try {
         let queryString = "select count(*) as count from users;"
         let data = await promisifedQuery(queryString);
-        return data
+        return data;
     } catch (error) {
         return (error.sqlMessage);
     }
